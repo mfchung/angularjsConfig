@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="controller as ctrl">
+<head>
+  <meta charset="UTF-8">
+  <title>config</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.js"></script>
+</head>
+<body>
+  <h1>my environment is {{ ctrl.environment }}</h1>
+
+  <script src="/config.js"></script>
+  <script>
+    var app = angular.module('app', ['configuration']);
+
+    app.controller('controller', ['settings', function(settings){
+    	this.environment = settings.environment;
+    }]);
+  </script>
+</body>
+</html>
